@@ -358,7 +358,7 @@ class GLaDOS {
     }
 
     async main() {
-        const dataFile = './../data/major.txt';
+        const dataFile = path.join(__dirname, './data/major.txt');
         const data = fs.readFileSync(dataFile, 'utf8')
             .split('\n')
             .filter(Boolean)
