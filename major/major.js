@@ -373,8 +373,9 @@ const mappedData = data.map((line, index) => {
 
         while (true) {
             for (let i = 0; i < data.length; i += maxThreads) {
-                const batch = data.slice(i, i + maxThreads);
-                const batchProxies = this.proxies.slice(i, i + maxThreads);
+                const batch = mappedData.slice(i, i + maxThreads);
+const batchProxies = this.proxies ? this.proxies.slice(i, i + maxThreads) : [];
+
                 await this.processBatch(batch, batchProxies);
 
                 if (i + maxThreads < data.length) {
