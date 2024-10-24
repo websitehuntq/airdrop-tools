@@ -360,9 +360,12 @@ class GLaDOS {
     async main() {
         const dataFile = path.join(__dirname, './data/major.txt');
         const data = fs.readFileSync(dataFile, 'utf8')
-            .split('\n')
-            .filter(Boolean)
-            .map((line, index) => ({ init_data: line.trim(), index }));
+    .split('\n')
+    .filter(Boolean);
+
+console.log(data); // Log the contents before mapping
+const mappedData = data.map((line, index) => ({ init_data: line.trim(), index }));
+
 
         while (true) {
             for (let i = 0; i < data.length; i += maxThreads) {
