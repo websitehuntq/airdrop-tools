@@ -364,7 +364,11 @@ class GLaDOS {
     .filter(Boolean);
 
 console.log(data); // Log the contents before mapping
-const mappedData = data.map((line, index) => ({ init_data: line.trim(), index }));
+const mappedData = data.map((line, index) => {
+    const [key, value] = line.split('=');
+    return { init_data: value.trim(), index };
+});
+
 
 
         while (true) {
