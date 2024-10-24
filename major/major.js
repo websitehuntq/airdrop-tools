@@ -63,7 +63,8 @@ class GLaDOS {
                 logMessage = `${accountPrefix}${ipPrefix} ${msg}`.green;
                 break;
             case 'error':
-                logMessage = `${accountPrefix}${ipPrefix} ${msg}`.red;
+                logMessage = `${accountPrefix} ${msg}`.red;
+
                 break;
             case 'warning':
                 logMessage = `${accountPrefix}${ipPrefix} ${msg}`.yellow;
